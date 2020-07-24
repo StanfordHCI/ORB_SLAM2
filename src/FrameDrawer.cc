@@ -79,7 +79,7 @@ cv::Mat FrameDrawer::DrawFrame()
     {
         for(unsigned int i=0; i<vMatches.size(); i++)
         {
-            if(vMatches[i]>=0)
+            if((vMatches[i]>=0) && (vMatches[i] < vCurrentKeys.size()))
             {
                 cv::line(im,vIniKeys[i].pt,vCurrentKeys[vMatches[i]].pt,
                         cv::Scalar(0,255,0));
